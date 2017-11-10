@@ -13,3 +13,6 @@ script:
 - bundle exec rake travis:script
 after_success:
 - bundle exec rake travis:after_success
+notifications:
+  webhooks:
+  - https://webhooks.datocms.com/90c4ecace98025b999ba/deploy-results

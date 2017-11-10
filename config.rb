@@ -19,6 +19,8 @@ activate :deploy do |deploy|
   deploy.commit_message = commit_message
 end
 
+activate :dato, live_reload: true
+
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
@@ -53,6 +55,10 @@ page '/*.txt', layout: false
 
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
+
+configure :development do
+  activate :livereload
+end
 
 configure :build do
   activate :minify_css

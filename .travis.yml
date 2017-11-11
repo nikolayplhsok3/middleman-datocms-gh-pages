@@ -11,8 +11,16 @@ env:
   - GH_COMMIT_EMAIL=mik.corcuera@gmail.com
 script:
 - bundle exec rake travis:script
-after_success:
-- bundle exec rake travis:after_success
+# after_success:
+# - bundle exec rake travis:after_success
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: gh-pages
+  local_dir: build
+  name: Deployed by Travis CI
 notifications:
   webhooks:
   - https://webhooks.datocms.com/90c4ecace98025b999ba/deploy-results

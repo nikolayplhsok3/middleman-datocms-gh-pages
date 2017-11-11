@@ -11,8 +11,6 @@ env:
   - GH_COMMIT_EMAIL=mik.corcuera@gmail.com
 script:
 - bundle exec rake travis:script
-# after_success:
-# - bundle exec rake travis:after_success
 deploy:
   provider: pages
   skip_cleanup: true
